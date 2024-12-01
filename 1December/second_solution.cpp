@@ -9,7 +9,7 @@ int second_solution(){
     
     int result = 0;
 
-    //Gonna bruteforce this due to time_constraints
+    //Gonna bruteforce this due to time constraints
     int counter;
     for(long unsigned int i = 0; i < first_list.size(); i++){ 
         counter = 0; 
