@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "2December/first_solution.h"
+#include "2December/second_solution.h"
 
 int main(){
-    std::cout << solution() << std::endl;
+    std::cout << second_solution() << std::endl;
 
     return 0;
 }
