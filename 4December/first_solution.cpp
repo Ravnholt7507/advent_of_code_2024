@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include "first_solution.h"
 
 std::vector<std::string> get_data(){
     std::ifstream inFile("4December/first_input.txt");
