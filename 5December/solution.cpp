@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <vector>
 
 //First solution
 struct sol5{
