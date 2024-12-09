@@ -11,7 +11,7 @@ int main(){
     std::cout << "2. December:  \n    First solution: " << solution2() << "\n    Second solution: " << second_solution2() << "\n";
     std::cout << "3. December:  \n    First solution: " << solution3() << "\n    Second solution: " << second_solution3() << "\n";
     std::cout << "4. December:  \n    First solution: " << solution4() << "\n    Second solution: " << second_solution4() << "\n";
-    std::cout << "5. December:  \n    First solution: " << solution5(); // << "\n    Second solution: " << second_solution5() << "\n";
+    std::cout << "5. December:  \n    First solution: " << solution5() << "\n    Second solution: " << second_solution5() << "\n";
 
     return 0;
 }

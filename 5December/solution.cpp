@@ -75,3 +75,35 @@ int solution5(){
 
     return result;
 }
+
+//Second solution
+bool check_ordering_reverse(std::vector<int> &ordering, std::vector<std::array<int, 2>> rules){
+    for(long unsigned int i = 0; i < ordering.size(); i++){
+        for(auto rule : rules){
+            if(rule[0] == ordering[i] && i > 0){
+                for(long unsigned int j = (i - 1); j < i && j >= 0; j--){
+                    if(ordering[j] == rule[1]){ 
+                        ordering[i] = rule[1];
+                        ordering[j] = rule[0];
+                        return true;
+                    }
+                }
+            }
+        } 
+    }
+    return false;
+}
+
+int second_solution5(){
+    int result = 0;
+    sol5 data = get_data5();
+    
+    for(long unsigned int i = 0; i < data.orderings.size(); i++){
+        if(!check_ordering(data.orderings[i], data.rules)){
+            while(check_ordering_reverse(data.orderings[i], data.rules)) continue;
+            result += data.orderings[i][data.orderings[i].size() / 2];
+        }
+    }
+
+    return result;
+}
