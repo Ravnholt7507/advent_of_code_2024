@@ -1,5 +1,5 @@
-#ifndef FIRST_SOLUTION_H
-#define FIRST_SOLUTION_H
+#ifndef SOLUTION4_H
+#define SOLUTION4_H
 #include <bits/stdc++.h>
 int solution4();
 int second_solution4();

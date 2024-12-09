@@ -6,6 +6,7 @@
 
 #include "solution.h"
 
+//First solution
 struct file_output{
     std::vector<int> first;
     std::vector<int> second;
@@ -66,6 +67,7 @@ int solution1(){
     return result;
 }
 
+//Second solution
 int second_solution1(){
     file_output data = get_data1();
     std::vector<int> first_list = data.first;
