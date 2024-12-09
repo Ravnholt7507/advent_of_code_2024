@@ -1,7 +1,8 @@
-#include "first_solution.h"
+#include "solution.h"
 
-std::vector<std::string> get_data(){
-    std::ifstream inFile("4December/first_input.txt");
+//First solution
+std::vector<std::string> get_data4(){
+    std::ifstream inFile("4December/input.txt");
     std::string line;
     std::vector<std::string> data;
 
@@ -17,9 +18,9 @@ std::vector<std::string> get_data(){
     return data;
 }
 
-int solution(){
+int solution4(){
     int result = 0;
-    std::vector<std::string> data = get_data();
+    std::vector<std::string> data = get_data4();
     std::string row;
     for(long unsigned int i = 0; i < data.size(); i++){
         row = data[i];
@@ -59,5 +60,27 @@ int solution(){
         }
     }
     
+    return result;
+}
+
+//Second solution
+int second_solution4() {
+    int result = 0;
+    std::vector<std::string> data = get_data4();
+    for (long unsigned int i = 0; i < data.size(); i++) {
+        for (long unsigned int j = 0; j < data[i].length(); j++) {
+            // Check down right 
+            if ((data.size() - i) >= 2 && (data[i].length() - j) >= 2 &&
+                ((data[i][j] == 'M' && data[i+1][j+1] == 'A' && data[i+2][j+2] == 'S') ||
+                 (data[i][j] == 'S' && data[i+1][j+1] == 'A' && data[i+2][j+2] == 'M'))) {
+                // Check down left (if right is found)
+                if ((data.size() - i) >= 2 && 
+                    ((data[i][j+2] == 'M' && data[i+1][j+1] == 'A' && data[i+2][j] == 'S') ||
+                     (data[i][j+2] == 'S' && data[i+1][j+1] == 'A' && data[i+2][j] == 'M'))) {
+                    result++;
+                }
+            }
+        }
+    }
     return result;
 }

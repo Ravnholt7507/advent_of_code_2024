@@ -4,15 +4,19 @@
 #include <string>
 #include <vector>
 
-#include "first_solution.h"
+#include "solution.h"
 
+struct file_output{
+    std::vector<int> first;
+    std::vector<int> second;
+};
 
 bool comparator(int first, int second){
     return first <= second;
 }
 
-file_output get_data(){
-    std::ifstream inFile("1December/first_input.txt");
+file_output get_data1(){
+    std::ifstream inFile("1December/input.txt");
     std::string line;
     int num;
     file_output data;
@@ -38,8 +42,8 @@ file_output get_data(){
     return data;
 }
 
-int solution(){
-    file_output data = get_data();
+int solution1(){
+    file_output data = get_data1();
 
     std::vector<int> first_list = data.first;
     std::vector<int> second_list= data.second;
@@ -57,6 +61,28 @@ int solution(){
         else if (first_list[i] > second_list[i]){
             result += (first_list[i] - second_list[i]);
         }
+    }
+
+    return result;
+}
+
+int second_solution1(){
+    file_output data = get_data1();
+    std::vector<int> first_list = data.first;
+    std::vector<int> second_list = data.second;
+    
+    int result = 0;
+
+    //Gonna bruteforce this due to time constraints
+    int counter;
+    for(long unsigned int i = 0; i < first_list.size(); i++){ 
+        counter = 0; 
+        for(long unsigned int j = 0; j < first_list.size(); j++){
+            if(first_list[i] == second_list[j]){
+                counter++;
+            } 
+        }
+        result += (first_list[i] * counter);
     }
 
     return result;
