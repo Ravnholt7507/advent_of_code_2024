@@ -15,7 +15,7 @@ int main(){
     std::cout << "4. December:  \n    First solution: " << solution4() << "\n    Second solution: " << second_solution4() << "\n";
     std::cout << "5. December:  \n    First solution: " << solution5() << "\n    Second solution: " << second_solution5() << "\n";
     std::cout << "6. December:  \n    First solution: " << solution6() << "\n    Second solution: 1703\n"; //Hard coded this, but it can be found in the solution 
-    std::cout << "7. December:  \n    First solution: " << solution7() << "\n";//    Second solution: " << second_solution5() << "\n";
+    std::cout << "7. December:  \n    First solution: " << solution7() << "\n    Second solution: " << second_solution7() << "\n";
 
     return 0;
 }

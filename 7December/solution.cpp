@@ -52,24 +52,44 @@ bool check_solution(const vector<uint64_t>& data, uint64_t goal) {
 
 uint64_t solution7(){
     uint64_t result = 0;
-//    vector<vector<int>> data = {{190, 10, 19},
-//                                {3267, 81, 40, 27},
-//                                {83, 17, 5},
-//                                {156, 15, 6},
-//                                {7290, 6, 8, 6, 15},
-//                                {161011, 16, 10, 13},
-//                                {192, 17, 8, 14},
-//                                {21037, 9, 7, 18, 13},
-//                                {292, 11, 6, 16, 20}};
     vector<vector<uint64_t>> data = get_data7();
-    int counter = 0; 
     for(auto& i : data){
         if (i.empty()) continue;
         uint64_t goal = i[0];
         vector<uint64_t> numbers(i.begin() + 1, i.end());
-        if(check_solution(numbers, goal)){ result += goal;
-            counter++;
-        }
+        if(check_solution(numbers, goal)) result += goal;
     }
+    return result;
+}
+
+bool recursive_check2(const vector<uint64_t>& data, uint64_t goal, uint64_t akkum, size_t index) {
+    if (index >= data.size()) {
+        return akkum == goal; 
+    }
+
+    uint64_t current = data[index];
+    uint64_t concat = stoull(to_string(akkum)+to_string(data[index]));
+
+    return recursive_check2(data, goal, akkum + current, index + 1) ||
+           recursive_check2(data, goal, akkum * current, index + 1) ||
+           recursive_check2(data, goal, concat, index + 1);
+}
+
+bool check_solution2(const vector<uint64_t>& data, uint64_t goal) {
+    uint64_t akkum = data[0];
+    return recursive_check2(data, goal, akkum, 1);
+}
+
+uint64_t second_solution7(){
+    uint64_t result = 0;
+    vector<vector<uint64_t>> data = get_data7();
+    
+    for(auto& i : data){
+        if (i.empty()) continue;
+        uint64_t goal = i[0];
+        vector<uint64_t> numbers(i.begin() + 1, i.end());
+        if(check_solution2(numbers, goal)) result += goal;
+    }
+
     return result;
 }
