@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++0x -Wall -pedantic-errors -g
+CXXFLAGS = -std=c++20 -Wall -pedantic-errors -g
 
 SRCS =  main.cpp $(wildcard *December/solution.cpp)
 OBJS = ${SRCS:.cpp=.o}

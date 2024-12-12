@@ -7,6 +7,7 @@
 #include "5December/solution.h"
 #include "6December/solution.h"
 #include "7December/solution.h"
+#include "8December/solution.h"
 
 int main(){
     std::cout << "1. December:  \n    First solution: " << solution1() << "\n    Second solution: " << second_solution1() << "\n";
@@ -16,6 +17,7 @@ int main(){
     std::cout << "5. December:  \n    First solution: " << solution5() << "\n    Second solution: " << second_solution5() << "\n";
     std::cout << "6. December:  \n    First solution: " << solution6() << "\n    Second solution: 1703\n"; //Hard coded this, but it can be found in the solution 
     std::cout << "7. December:  \n    First solution: " << solution7() << "\n    Second solution: " << second_solution7() << "\n";
+    std::cout << "8. December:  \n    First solution: " << solution8() << "\n";//    Second solution: " << second_solution8() << "\n";
 
     return 0;
 }
