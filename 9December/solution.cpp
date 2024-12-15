@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-#include <string>
-#include <vector>
 
 //First Solution
 std::string get_data9(){
