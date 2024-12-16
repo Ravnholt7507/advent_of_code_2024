@@ -3,18 +3,21 @@
 using namespace std;
 
 //First solution
-int recursive_check(vector<vector<int>> &data, long unsigned int i, long unsigned int j, int last_num, int result){
-    cout << i << " " << j << "Max is " << data.size() << " and " << data[i].size()<< endl;
-    if(data[i][j] == 9) return 1;
-    if(j+1 < data[i].size() && data[i][j+1] == last_num + 1)result += recursive_check(data, i, j+1, data[i][j+1], result); 
-    if(j-1 > 0 && data[i][j-1] == last_num + 1) result += recursive_check(data, i, j-1, data[i][j-1], result); 
-    if(i+1 < data.size() && data[i+1][j] == last_num + 1) result += recursive_check(data, i+1, j, data[i+1][j], result); 
-    if(i-1 >  0 && data[i-1][j] == last_num + 1) result += recursive_check(data, i-1, j, data[i-1][j], result); 
+int recursive_check(vector<vector<int>> &data, long unsigned int i, long unsigned int j, int last_num, int result, set<pair<int, int>> &already_found){
+    if(data[i][j] == 9 && already_found.contains({i, j})){
+        already_found.insert(pair<int, int>(i, j));
+        return result++;
+    }
+    if(j+1 < data[i].size() && data[i][j+1] == last_num + 1) result += recursive_check(data, i, j+1, data[i][j+1], result, already_found); 
+    if(j > 0 && data[i][j-1] == last_num + 1) result += recursive_check(data, i, j-1, data[i][j-1], result, already_found); 
+    if(i+1 < data.size() && data[i+1][j] == last_num + 1) result += recursive_check(data, i+1, j, data[i+1][j], result, already_found); 
+    if(i > 0 && data[i-1][j] == last_num + 1) result += recursive_check(data, i-1, j, data[i-1][j], result, already_found); 
     return result;
 }
 
 int check_trail(vector<vector<int>> &data, long unsigned int i, long unsigned int j){
-    int result = recursive_check(data, i, j, data[i][j], 0);
+    set<pair<int, int>> already_found;
+    int result = recursive_check(data, i, j, data[i][j], 0, already_found);
     return result;
 }
 
