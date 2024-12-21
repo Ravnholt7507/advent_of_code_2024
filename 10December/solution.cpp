@@ -1,14 +1,13 @@
-#include <bits/stdc++.h>
-
+#include "solution.h"
 using namespace std;
 
 //First solution
-std::vector<std::vector<int>> get_data10(){
-    std::ifstream inFile("10December/input.txt");
-    std::string line;
-    std::vector<std::vector<int>> data;
+vector<vector<int>> get_data10(){
+    ifstream inFile("10December/input.txt");
+    string line;
+    vector<vector<int>> data;
 
-    std::vector<int> tempVec;
+    vector<int> tempVec;
     
     if(inFile){
         while(getline(inFile, line, '\n')) {
@@ -20,7 +19,7 @@ std::vector<std::vector<int>> get_data10(){
         }
     }
     else{
-        std::cout << "File not found" << std::endl;
+        cout << "File not found" << endl;
     }
 
     return data;
@@ -45,14 +44,6 @@ int check_trail(vector<vector<int>> &data, long unsigned int i, long unsigned in
 
 int solution10(){
     int result = 0;
-    //vector<vector<int>> data = {{8, 9, 0, 1, 0, 1, 2, 3},
-    //                            {7, 8, 1, 2, 1, 8, 7, 4},
-    //                            {8, 7, 4, 3, 0, 9, 6, 5},
-    //                            {9, 6, 5, 4, 9, 8, 7, 4},
-    //                            {4, 5, 6, 7, 8, 9, 0, 3},
-    //                            {3, 2, 0, 1, 9, 0, 1, 2},
-    //                            {0, 1, 3, 2, 9, 8, 0, 1},
-    //                            {1, 0, 4, 5, 6, 7, 3, 2}};
     vector<vector<int>> data = get_data10(); 
     
     for(long unsigned int i = 0; i < data.size(); i++){
@@ -88,14 +79,6 @@ int check_trail2(vector<vector<int>> &data, long unsigned int i, long unsigned i
 
 int second_solution10(){
     int result = 0;
-    //vector<vector<int>> data = {{8, 9, 0, 1, 0, 1, 2, 3},
-    //                            {7, 8, 1, 2, 1, 8, 7, 4},
-    //                            {8, 7, 4, 3, 0, 9, 6, 5},
-    //                            {9, 6, 5, 4, 9, 8, 7, 4},
-    //                            {4, 5, 6, 7, 8, 9, 0, 3},
-    //                            {3, 2, 0, 1, 9, 0, 1, 2},
-    //                            {0, 1, 3, 2, 9, 8, 0, 1},
-    //                            {1, 0, 4, 5, 6, 7, 3, 2}};
     vector<vector<int>> data = get_data10(); 
     
     for(long unsigned int i = 0; i < data.size(); i++){

@@ -153,6 +153,30 @@ output/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/10December/solution.cpp.s
 .PHONY : 10December/solution.cpp.s
 
+11December/solution.o: 11December/solution.cpp.o
+.PHONY : 11December/solution.o
+
+# target to build an object file
+11December/solution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/11December/solution.cpp.o
+.PHONY : 11December/solution.cpp.o
+
+11December/solution.i: 11December/solution.cpp.i
+.PHONY : 11December/solution.i
+
+# target to preprocess a source file
+11December/solution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/11December/solution.cpp.i
+.PHONY : 11December/solution.cpp.i
+
+11December/solution.s: 11December/solution.cpp.s
+.PHONY : 11December/solution.s
+
+# target to generate assembly for a file
+11December/solution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/11December/solution.cpp.s
+.PHONY : 11December/solution.cpp.s
+
 1December/solution.o: 1December/solution.cpp.o
 .PHONY : 1December/solution.o
 
@@ -405,6 +429,9 @@ help:
 	@echo "... 10December/solution.o"
 	@echo "... 10December/solution.i"
 	@echo "... 10December/solution.s"
+	@echo "... 11December/solution.o"
+	@echo "... 11December/solution.i"
+	@echo "... 11December/solution.s"
 	@echo "... 1December/solution.o"
 	@echo "... 1December/solution.i"
 	@echo "... 1December/solution.s"
